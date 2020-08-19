@@ -1,0 +1,122 @@
+
+
+
+@media (max-width: 1050px){
+    .notice{
+        display: none;
+    }
+}
+
+@media (max-width: 925px){
+    aside {
+        display: none;
+    }
+    #drop_down{
+        display: block;
+    }
+    .Content{
+        left:0;
+        width: 100%;
+    }
+
+    
+}
+
+@media (max-width: 770px){
+    .card{
+        width: 140px;
+        height: 140px;
+    }
+    .cardcontainer{
+        justify-content: space-around;
+    }
+    .cardtitle h3{
+        font-size: 14px;
+    }
+    .member_form .body input{
+        width: 100%;
+    }
+
+
+/************************** Show Member_page **********************/
+    .single_member_wrapper{
+        width: 100%;
+        margin: 0;
+    }
+    .second .academic,
+    .third_div .address{
+        width: 60%;
+    }
+
+    .third_div .address>div,
+    .second .academic>div,
+    .third_div .personal_info>div{
+        font-size: 13px;
+        width: 100%;
+        border-bottom: 1px solid #77bd77ba;
+    }
+    .third_div{
+        flex-direction: column;
+    }
+
+
+    .notice_form{
+        margin: 0;
+    }
+}
+
+
+@media (max-width: 499px) {
+
+    header{
+        flex-direction: column;
+    }
+    .Content{
+        width:100%;
+    }
+
+/************************** Show Member_page **********************/
+    header .logo,
+    .single_member_wrapper .name h3,
+    .single_member_wrapper a,
+    .second .image{
+        width: fit-content;
+    }
+    .nav-list{
+        width: 95%;
+    }
+
+    .single_member_wrapper{
+        width: 100%;
+        margin: 0;
+    }
+    .second{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .single_member_wrapper .name{
+        align-items: center;
+    }
+    .second .academic{
+        width: 100%;
+    }
+
+    .third_div .personal_info,
+    .third_div .address{
+        width: 100%;
+    }
+    
+
+    *{
+        width: 100%;
+    }
+    
+}
+
+@media (max-width: 360px) {
+    .members .member{
+        height: 100px;
+        width: 100px;
+    }
+}

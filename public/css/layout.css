@@ -1,0 +1,254 @@
+:root{
+    --body-width: 100vw;
+    --body-height: 100vh;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    position: relative;
+    margin: 0;
+    padding:0;
+    width: 100%;
+    height: 120vh;
+}
+ul{
+    list-style: none;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    height: 100%;
+
+}
+img{
+    width:100%;
+    height: 100%;
+}
+
+/******************************************** Header part **************************************/
+
+header{
+    position: fixed;
+    top:0;
+    background: rgb(20, 51, 88);
+    color: #eee8e8d3;
+    width:100%;
+    height:100px;
+    box-shadow: 1px 2px 10px white;
+    opacity: 0.9;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+.logo{
+    width: fit-content;
+    height:100%;
+    padding-left:20px;
+    display:flex;
+    align-items: center;
+    justify-content: start;
+}
+.nav-list{
+    width: 360px;
+    height:100%;
+    display:flex;
+    align-items: center;
+}
+.nav-list ul{
+    display:flex;
+    width:100%;
+    justify-content: space-around;
+}
+.nav-list ul li{
+    padding:5px 5px;
+    cursor: pointer;
+}
+
+.nav-list ul li:hover{
+    color:rgb(241, 127, 127);
+    border: 1px solid rgb(142, 255, 98);
+
+    border-radius: 5px;;
+}
+/* Content part */
+aside{
+    position:fixed;
+    top:100px;
+    left: 0;
+    flex-shrink: 0;
+    width: 250px;
+    height: 100vh;
+    background: rgb(10, 36, 68);
+    color: white;
+    z-index: 999;
+}
+#drop_down{
+    display: none;
+}
+#drop_down_menu{
+    position:fixed;
+    flex-shrink: 0;
+    width: 250px;
+    height: auto;
+    background: rgb(10, 36, 68);
+    color: white;
+    z-index: 999;
+}
+
+.sidenav-list{
+    box-sizing: border-box;
+    margin-top: 10px;
+    width: 100%;
+}
+aside ul li,
+#drop_down_menu ul li{
+    width: 90%;
+    height: 40px;
+    margin:0 5px;
+    padding: 10px 20px;
+    border-bottom: 1px solid rgb(16, 240, 16);
+}
+#drop_down_menu ul li:hover,
+aside ul li:hover{
+    background: rgb(41, 32, 32);
+    cursor: pointer;
+    border:none;
+}
+#drop_down_menu{
+    position: fixed;
+    top: 100px;
+    right: 10px;
+    opacity: 0.7;
+    z-index: 1000;
+}
+#drop_down_menu.hide{
+    display: none;
+}
+/* Content part */
+.Content{
+    position: absolute;
+    top:100px;
+    left:250px;
+    width: calc(100vw - 250px);
+    min-height: 85vh;
+    display:flex;
+    flex-direction:column;
+}
+
+
+
+/*Login*/
+#login_form.hide{
+    display: none;
+}
+
+#login_form .container{
+    position: fixed;
+    top: 0;
+    z-index: 4000;
+    height: 100vh;
+    width: var(--body-width);
+    height: var(--body-height);
+    background: rgba(22, 175, 162, 0.59);
+    display: flex;
+
+}
+
+.hide_form{
+    height: 40px;
+    width: 40px;
+    padding: 10px 15px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(214, 111, 111, 0.52);
+    cursor: pointer;
+}
+
+.hide_form:hover{
+    background: rgb(206, 53, 53);
+}
+
+#login_form .form{
+    margin: auto;
+    height: 250px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px;
+    border: 1px solid greenyellow;
+    border-radius: 5px;
+    background: #215b63b8;
+    color: white;
+    opacity: 1;
+}
+
+
+.error{
+    color: #ffb715;
+}
+
+.error.hide{
+    display: none;
+}
+
+
+.email_pass{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+    .email_pass .email,
+    .email_pass .password{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+}
+
+.email_pass .email input,
+.email_pass .password input{
+    padding: 7px 10px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+
+
+
+/******************************************** Button Design ************************************/
+.buttons{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+button{
+    width: 48%;
+    height: 30px;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#login_btn{
+    background: #b2ff1b;
+}
+
+#forgot_btn{
+    background: #79786b5c;
+    color: white;
+}

@@ -1,0 +1,287 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+img{
+    height: 100%;
+    width: 100%;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+body{
+    position: relative;
+}
+/*********************************** Header Starts *******************************/
+header{
+    position: fixed;
+    height: 100px;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgb(34, 132, 118);
+    color: white;
+    box-shadow: 5px 2px 2px rgb(214, 210, 210);
+    z-index: 1000;
+}
+
+.logo{
+    height: 50px;
+    width: 150px;
+    background: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.header_menu{
+    width: auto;
+    display: flex;
+    justify-content: space-around;
+    padding-right: 30px;
+}
+
+.header_menu li{
+    height: 30px;
+    width: auto;
+    padding:5px 10px;
+    margin: 0 5px;
+    border-radius: 4px;
+    background: inherit;
+    cursor: pointer;
+}
+.header_menu li:hover{
+    border: 1px solid rgb(201, 235, 49);
+}
+.side-nav{
+    top: 100px;
+    position: fixed;
+    left: 0;
+    height: 100vh;
+    width: 250px;
+    background: rgb(3, 116, 72);
+    overflow: hidden;
+}
+
+.admin{
+    height: 70px;
+    width: 100%;
+    background: inherit;
+    display: flex;
+    align-items: center;
+    color: azure;
+}
+.admin .profile-image{
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+
+
+.search-box{
+    height: 50px;
+    width: 100%;
+    background: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-box input{
+    padding-left: 20px;
+    border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px;
+}
+.search-box button{
+    border-bottom-right-radius: 3px;
+    border-top-right-radius: 3px;
+    width: 35px;
+}
+.search-box input,
+.search-box button{
+    padding: 5px 0;
+    border: none;
+}
+.dashboard{
+    width:calc(100vw-250px);
+}
+.dashboard-items{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+}
+
+.with_add{
+    display:flex;
+    justify-content: space-between;
+}
+.add_new{
+    width: 100px;
+    height: 30px;
+    background: rgb(62, 69, 82);
+    padding: 5px 13px;
+    border-radius: 5px;
+    color: #dae6e5;
+    cursor: pointer;
+}
+
+.dashboard-items div{
+    height:130px;
+    border-radius: 5px;
+    background: rgb(34, 132, 118);
+    color: white;
+    margin: 5px;
+    cursor: pointer;
+    box-shadow: 5px 10px 10px rgba(121, 118, 117, 0.74);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: large;
+}
+
+.students.hide{
+    display:none;
+}
+
+
+.library.hide{
+    display:none;
+}
+
+.notice.hide{
+    display:none;
+}
+
+.teachers.hide{
+    display:none;
+}
+.stuffs.hide{
+    display:none;
+}
+
+.hostel.hide{
+    display:none;
+}
+.cardcontainer.hide{
+    display: none;
+}
+
+
+.side-nav-item{
+    width: 100%;
+    text-align: left;
+    padding: 5px 10px;
+    border: none;
+    background: inherit;
+    color: #fffcfc;
+    margin: 8px;
+    outline: none;
+    border-bottom: 1px solid grey;
+}
+
+.side-nav-item:hover{
+    background: rgb(34, 132, 118);
+    color: rgb(209, 204, 205);
+}
+.side-nav-item i{
+    margin-right: 10px;
+}
+
+.dashboard{
+    position: absolute;
+    top: 100px;
+    left: 250px;
+    height: auto;
+    width: calc(100% - 255px);
+    padding: 10px;
+
+}
+
+.dashboard .header{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: flex-end;
+    border-bottom: 3px solid rgb(212, 207, 207);
+    margin-bottom: 10px;
+    color: #1d1f259e;
+}
+
+
+.dashboard-items div.compressed{
+    height: 40px;
+}
+.right-side-bar{
+    position: absolute;
+    top: 200px;
+    right:0;
+    width: 200px;
+    height: 100vh;
+}
+
+.submenus div{
+    height: 30px;
+    border-radius: 5px;
+    background: rgb(34, 132, 118);
+    color: white;
+    margin: 5px;
+    cursor: pointer;
+    box-shadow: 5px 10px 10px rgba(121, 118, 117, 0.74);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: large;
+}
+
+/*************************************card design************************************/
+.cardcontainer{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    overflow:hidden;
+}
+.card{
+    box-shadow:0 10px 10px 0 rgba(0, 0, 0, 0.5);
+    height: 200px;
+    width: 200px;
+    margin: 5px;
+    background: rgb(0, 0, 0);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cardImage{
+    height: 80%;
+    width: 100%;
+}
+.cardtitle{
+    display:flex;
+}
+
+.cardtitle h3{
+    width: fit-content;
+    margin: auto;
+}
+.cardImage img{
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+}
+.card:hover{
+    opacity: 0.7;
+}
+
+/************************************* Button design************************************/

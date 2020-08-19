@@ -1,0 +1,214 @@
+
+
+
+/******************************************* Attendance ********************************************/
+
+.customBox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width:300px;
+    padding-top: 30px;
+    background: #e62222;
+}
+
+button{
+    margin: auto;
+    padding: 7px;
+    width: 100px;
+    background: #ff107fc2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.attendacnceSheetWrapper{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    min-height: 100vh;
+    background: rgba(238, 31, 31, 0.41);
+}
+.attendacnceSheetWrapper.hide{
+    display: none;
+}
+
+/******************************************* <Attendance Table> ********************************************/
+.attendanceTableWrapper{
+    margin: 35px;
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+}
+.attendanceTableWrapper.hide{
+    display: none;
+}
+.attendanceTableWrapper .title{
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    background: #7b0000c9;
+    color: white;
+    border-bottom: 1px solid rgb(9, 214, 170);
+}
+.attendanceTableWrapper .title h3{
+    text-align: center;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+}
+
+.attendanceTableWrapper button{
+    margin: auto;
+    padding: 10px;
+    width: 300px;
+    color: white;
+    border: none;
+    border-radius: 0%;
+    background: rgb(51, 6, 6);
+    color: rgb(6, 198, 218);
+}
+
+
+.attendanceTableBody{
+
+    height: 387;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    background: #a90404;
+}
+
+
+.attendanceTableBody button{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    background: rgb(9, 214, 170);
+    color: rgb(0, 0, 0);
+    border: 1px solid yellow;
+    font-size: 20px;
+}
+
+
+
+/* button will be red when button pressed as absent */
+.attendanceTableBody button.absent{
+    background: rgb(224, 47, 47);
+    color: white;
+}
+
+
+/* some student those are not active since long time they will be separated */ 
+.attendanceTableBody button.inactive{
+    background: rgb(170, 175, 174);
+}
+
+
+
+.attendanceTableBody.hide{
+    display: none;
+}
+
+/******************************************* </Attendance Table> ********************************************/
+
+
+/******************************************* </Attendance Table> ********************************************/
+.headingForm1{
+    height: auto;
+}
+.headingForm1.hide{
+    display: none;
+}
+
+.headingForm2.hide{
+    display: none;
+}
+
+
+
+select{
+    padding: 7px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    display: inline-block;
+    width: 150px;
+    text-align: center;
+}
+
+.formdiv{
+    padding:15px;
+    width: 300px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+
+label{
+    width: 100px;
+    color: #f1fffc;
+}
+
+.formdiv input{
+    padding:7px;
+    width: 150px;
+    border:none;
+    border-radius: 5px;
+}
+
+.todaysAttendance{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    height: auto;
+    border-radius: 10px;
+    background: #7b0d0d;
+}
+
+.todaysAttendance.hide{
+    display: none;
+}
+
+.todaysAttendance div{
+    height: 40px;
+    text-align: center;
+    font-size: large;
+    font-weight: 600;
+    color: white;
+    padding: 10px;
+    border-bottom: 2px solid #12d812;
+}
+
+.todaysAttendance div:last-child{
+    border: none;
+}
+
+.todaysAttendance .heading{
+    color: #b8e8f7;
+}

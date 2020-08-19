@@ -1,0 +1,14 @@
+.EventContainer{
+    height: auto;
+    width: 80vw;
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 100px;
+}
+.EventCards{
+    height: auto;
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+}

@@ -1,0 +1,194 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+img{
+    height:100%;
+    width: 100%;
+}
+body{
+    min-height: 100vh;
+    width:100vw;
+}
+.wrapper{
+    width:100%;
+    height: 100%;
+}
+.members{
+    width:100%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.members .member{
+    position: relative;
+    margin: auto;
+    margin: 4px;
+    height: 110px;
+    border-radius: 10%;
+    overflow: hidden;
+    width: 110px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #098a7e;
+    box-shadow: 3px 2px 10px grey;
+    color: aliceblue;
+    cursor: pointer;
+}
+.members .member .image{
+    position:absolute;
+    width: 95%;
+    height: 95%;
+    border-radius: 10%;
+    overflow: hidden;
+}
+.members .member .name{
+    position:absolute;
+    bottom:0;
+    background: #00968891;
+    height: 20px;
+    width: 100%;
+    display:flex;
+    justify-content: center;
+    z-index: 100;
+}
+
+/************************************************ Show Single Member **************************************/
+
+.single_member_wrapper{
+    margin: auto;
+    height: auto;
+    padding: 10px;
+    width: 90%;
+    background: #009688d9;
+    color: white;
+    display: flex;
+    flex-direction: column;
+
+}
+.single_member_wrapper>div{
+    display: flex;
+}
+.single_member_wrapper .image{
+    height: 150px;
+    width: 150px;
+    border-radius: 3px;
+    overflow: hidden;
+}
+.single_member_wrapper  .academic div,
+.single_member_wrapper  .personal_info div,
+.single_member_wrapper  .address div{
+    height: 40px;
+    width: 500px;
+    display: flex;
+    align-items: center;
+}
+.single_member_wrapper  .personal_info{
+    width: 350px;
+}
+.single_member_wrapper  .academic div .title,
+.single_member_wrapper  .personal_info div .title,
+.single_member_wrapper  .address div .title{
+    width: 120px;
+}
+.single_member_wrapper  .academic div .info,
+.single_member_wrapper  .personal_info div .info,
+.single_member_wrapper  .address div .info{
+    width: 300px;
+}
+.single_member_wrapper>div>div{
+    width: 200px;
+}
+.single_member_wrapper .name{
+    height: 40px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.single_member_wrapper .second{
+    border-bottom: 1px solid white;
+    margin-bottom: 30px;
+}
+
+.editBtn{
+    margin-top: 5px;
+    height: 30px;
+}
+.editBtn a{
+    padding: 5px 40px;
+    background: #c0d3dc;
+    color:black;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/************************************************ Edit Member **************************************/
+.member_form{
+    width: 95%;
+    height: auto;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid grey;
+    background: #3aa798d1;
+    border-radius: 5px;
+    border:none;
+}
+form{
+    display: flex;
+    flex-direction: column;
+}
+.personal_info,
+.academic,
+.address{
+    display: flex;
+    flex-direction: column;
+}
+
+.personal_info.hide,
+.academic.hide,
+.address.hide{
+     display: none;
+}
+
+.member_form .body{
+    display: flex;
+    flex-wrap: wrap;
+}
+.member_form .body input{
+    padding:5px 10px;
+    border:none;
+    outline: none;
+    border-radius: 3px;
+}
+.personal_info .body div,
+.academic .body div,
+.address .body div{
+     width: 350px;
+     height: 50px;
+     padding: 10px;
+     display: flex;
+     flex-direction: column;
+     align-items: flex-start;
+     justify-content: space-between;
+}
+.nextBtn{
+     height: 50px;
+     width: 100%;
+}
+.nextBtn button{
+     margin: 20px 10px;
+     padding: 5px;
+     width: 100px;
+     cursor: pointer;
+     border:none;
+     border-radius: 5px;
+}

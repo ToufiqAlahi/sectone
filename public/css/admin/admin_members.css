@@ -1,0 +1,63 @@
+
+
+.member_form{
+    width: 95%;
+    height: auto;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid grey;
+    background: #3aa798d1;
+    border-radius: 5px;
+    border:none;
+}
+form{
+    display: flex;
+    flex-direction: column;
+}
+.personal_info,
+.academic,
+.address{
+    display: flex;
+    flex-direction: column;
+}
+
+.personal_info.hide,
+.academic.hide,
+.address.hide{
+     display: none;
+}
+
+
+.member_form .body{
+    display: flex;
+    flex-wrap: wrap;
+}
+.member_form .body input{
+    padding:5px 10px;
+    border:none;
+    outline: none;
+    border-radius: 3px;
+}
+.personal_info .body div,
+.academic .body div,
+.address .body div{
+     width: 350px;
+     height: 60px;
+     padding:7px 10px;
+     display: flex;
+     flex-direction: column;
+     align-items: flex-start;
+     justify-content: space-between;
+}
+.nextBtn{
+     height: 25px;
+     padding-left: 10px;
+     width: 100%;
+}
+.nextBtn button{
+     padding: 5px;
+     width: 100px;
+     cursor: pointer;
+     border:none;
+     border-radius: 5px;
+}
