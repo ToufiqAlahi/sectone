@@ -29,6 +29,7 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware(IsAdmin::
     Route::get('/teacher/edit/{teacher}', 'TeachersController@edit');
     Route::get('/teacher/create', 'TeachersController@create');
     Route::resource('/teacher', 'TeachersController');
+
 /******************************************* Event Routes **********************************/
     Route::get('/event/events', 'EventsController@index');
     Route::get('/event/create', 'EventsController@create');
@@ -59,6 +60,7 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware(IsAdmin::
     Route::get('/dashboard', 'DashboardController@dashboard');
     Route::get('/settings', 'DashboardController@settings');
     Route::get('/hostel', 'DashboardController@hostel');
+    Route::get('/library', 'DashboardController@library');
     Route::get('/teachers', 'DashboardController@teachers');
     Route::get('/hostel/member/{member}', 'DashboardController@member_show');
 });
@@ -74,6 +76,10 @@ Route::namespace('Teacher')->prefix('teacher')->middleware(IsTeacher::class)->gr
     Route::get('/attendance/delete', 'AttendanceController@delete');
 });
 
+/******************************************* Library Routes **********************************/
+Route::namespace('Library')->prefix('library')->group(function (){
+    Route::get('/book/{book}', 'BooksController@show');
+});
 
 Route::namespace('Student')->prefix('student')->middleware(IsStudent::class)->group(function (){
      Route::get('/home', 'StudentsController@home');

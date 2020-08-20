@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\HostelMember;
+use App\Models\Library\Book;
 class DashboardController extends Controller
 {
     public function dashboard(){
@@ -14,6 +15,10 @@ class DashboardController extends Controller
     public function hostel(){
         $members = HostelMember::all();
         return view('admin.hostel.hostel', compact('members'));
+    }
+    public function library(){
+        $books = Book::all();
+        return view('admin.library.books', compact('books'));
     }
 
     public function member_show(HostelMember $member){

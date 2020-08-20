@@ -5,9 +5,10 @@ use App\User;
 use App\Models\Attendance;
 use App\Models\Department;
 use App\Models\Semester;
-use App\Models\HostelMember;
-use App\Models\Course;
-use App\Models\Member;
+use App\Models\Hostel\Member as H_Member;
+use App\Models\Academic\Course;
+use App\Models\Library\Member as L_Member;
+use App\Models\Library\IssueBook as Book;
 use Illuminate\Database\Eloquent\Model;
 
 class Student extends Model
@@ -29,14 +30,22 @@ class Student extends Model
     }
 
     public function hostel_member(){
-        return $this->hasOne(HostelMember::class);
+        return $this->hasOne(H_Member::class);
     }
 
     public function library_member(){
-        return $this->hasOne(Member::class);
+        return $this->hasOne(L_Member::class);
+    }
+
+    public function book(){
+        return $this->hasOne(Book::class);
     }
 
     public function courses(){
         return $this->belongsToMany(Course::class);
+    }
+
+    public function getNameAttribute(){
+        return $this->user->name;
     }
 }

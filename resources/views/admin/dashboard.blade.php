@@ -28,7 +28,7 @@
         <div class="item" onclick="goto('admin/payment')" ><h3>Payments</h3></div>
         <div class="item" onclick="goto('admin/student/students')" ><h3>Students</h3></div>
         <div class="item" onclick="goto('admin/teacher')" ><h3>Teachers</h3></div>
-        <div class="item" onclick="goto('dashboard')" ><h3>Hostel</h3></div>
+        <div class="item" onclick="goto('admin/library')" ><h3>Library</h3></div>
         <div class="item" onclick="goto('dashboard')" ><h3>Hostel</h3></div>
         <div class="item" onclick="goto('dashboard')" ><h3>Hostel</h3></div>
     </div>

@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Models\Book;
+use App\Models\Library\Book;
 class BooksTableSeeder extends Seeder
 {
     /**
@@ -12,7 +12,12 @@ class BooksTableSeeder extends Seeder
     public function run()
     {
         Book::truncate();
+        factory(Book::class, 20)->create();
 
+
+
+
+    /*
         $books  = [
             [
                 'title'=>'Programming with C',
@@ -66,5 +71,9 @@ class BooksTableSeeder extends Seeder
                 'available'=> $book['available']
             ]);
         }
+        */
+    
     }
+
+
 }
