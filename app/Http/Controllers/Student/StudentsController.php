@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Semester;
 use App\Models\Course;
+use App\Models\Library\IssueBook as Issue;
 use App\Models\Student;
 use App\Models\Department;
 use App\Models\Attendance;
@@ -44,5 +45,9 @@ class StudentsController extends Controller
         }
         return view('student.all', compact('attendance'));
 
+    }
+
+    public function books(){
+        return view('student.books');
     }
 }

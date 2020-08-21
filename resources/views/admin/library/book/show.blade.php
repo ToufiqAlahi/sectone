@@ -8,5 +8,6 @@
                 <p>{{$book->author}}</p>
             </div>
         </div>
+        <a href="{{route('library.book.edit', $book)}}" class="btn btn-success">Edit</a>
     </div>
 @endsection

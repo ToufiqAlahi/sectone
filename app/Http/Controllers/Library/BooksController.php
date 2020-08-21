@@ -15,7 +15,8 @@ class BooksController extends Controller
      */
     public function index()
     {
-        //
+        $books = Book::all();
+        return view('admin.library.book.books', compact('books'));
     }
 
     /**
@@ -25,7 +26,7 @@ class BooksController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.library.book.create');
     }
 
     /**
@@ -36,7 +37,19 @@ class BooksController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $book = new Book;
+        $book->title = $request->title;
+        $book->author = $request->author;
+        $book->description = $request->description;
+        $book->type = $request->type;
+        $book->total_quantity = $request->quantity;
+        $book->available = $request->available;
+        $book->rack = $request->rack;
+        $book->row = $request->row;
+        $book->col = $request->col;
+        $book->save();
+
+        return redirect()->route('library.book.index');
     }
 
     /**
@@ -47,7 +60,7 @@ class BooksController extends Controller
      */
     public function show(Book $book)
     {
-        return view('admin.library.show_book', compact('book'));
+        return view('admin.library.book.show', compact('book'));
     }
 
     /**
@@ -58,7 +71,7 @@ class BooksController extends Controller
      */
     public function edit(Book $book)
     {
-        //
+        return view('admin.library.book.edit', compact('book'));
     }
 
     /**
@@ -70,7 +83,16 @@ class BooksController extends Controller
      */
     public function update(Request $request, Book $book)
     {
-        //
+        $book->title = $request->title;
+        $book->description = $request->description;
+        $book->total_quantity = $request->quantity;
+        $book->available = $request->available;
+        $book->rack = $request->rack;
+        $book->row = $request->row;
+        $book->col = $request->col;
+        $book->update();
+
+        return redirect()->route('library.book.index');
     }
 
     /**

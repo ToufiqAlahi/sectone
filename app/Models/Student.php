@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Models;
-use App\User;
+
 use App\Models\Attendance;
 use App\Models\Department;
 use App\Models\Semester;
@@ -11,11 +11,13 @@ use App\Models\Library\Member as L_Member;
 use App\Models\Library\IssueBook as Book;
 use Illuminate\Database\Eloquent\Model;
 
+use App\Traits\UserInfo;
+
+
 class Student extends Model
 {
-    public function user(){
-        return $this->belongsTo(User::class);
-    }
+    use UserInfo;
+    
 
     public function attendance(){
         return $this->hasMany(Attendance::class);
@@ -37,15 +39,11 @@ class Student extends Model
         return $this->hasOne(L_Member::class);
     }
 
-    public function book(){
-        return $this->hasOne(Book::class);
+    public function books(){
+        return $this->hasMany(Book::class);
     }
 
     public function courses(){
         return $this->belongsToMany(Course::class);
-    }
-
-    public function getNameAttribute(){
-        return $this->user->name;
     }
 }

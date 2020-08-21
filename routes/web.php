@@ -19,42 +19,10 @@ Route::get('pages/advisors', 'HomeController@advisors');
 Route::get('pages/members', 'HomeController@members');
 
 Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware(IsAdmin::class)->group(function (){
-/******************************************* User Routes **********************************/
-    Route::get('/user/users', 'UsersController@index');
-    Route::get('/user/edit/{user}', 'UsersController@edit');
-    Route::get('/user/delete/{user}', 'UsersController@delete');
-    Route::post('/user/update/{user}', 'UsersController@update');
-
 /******************************************* Teachers Routes **********************************/
     Route::get('/teacher/edit/{teacher}', 'TeachersController@edit');
     Route::get('/teacher/create', 'TeachersController@create');
     Route::resource('/teacher', 'TeachersController');
-
-/******************************************* Event Routes **********************************/
-    Route::get('/event/events', 'EventsController@index');
-    Route::get('/event/create', 'EventsController@create');
-    Route::post('/event/store', 'EventsController@store');
-    Route::get('/event/edit/{event}', 'EventsController@edit');
-    Route::post('/event/update/{event}', 'EventsController@update');
-    Route::get('/event/delete/{event}', 'EventsController@destroy');
-
-/******************************************* Member Routes **********************************/
-    Route::get('/member/members', 'MembersController@index');
-    Route::get('/member/show/{id}', 'MembersController@show');
-    Route::get('/member/create/{user_id}', 'MembersController@create');
-    Route::post('/member/store', 'MembersController@store');
-    Route::get('/member/edit/{id}', 'MembersController@edit');
-    Route::post('/member/update/{member}', 'MembersController@update');
-    Route::get('/member/delete/{member}', 'MembersController@destroy');
-
-/******************************************* Student Routes **********************************/
-    Route::get('/student/students', 'StudentsController@index');
-    Route::get('/student/show/{id}', 'StudentsController@show');
-    Route::get('/student/create', 'StudentsController@create');
-    Route::post('/student/store', 'StudentsController@store');
-    Route::get('/student/edit/{student}', 'StudentsController@edit');
-    Route::post('/student/update/{student}', 'StudentsController@update');
-    Route::get('/student/delete/{student}', 'StudentsController@destroy');
 
 /******************************************* Dashboard Routes **********************************/
     Route::get('/dashboard', 'DashboardController@dashboard');
@@ -77,8 +45,12 @@ Route::namespace('Teacher')->prefix('teacher')->middleware(IsTeacher::class)->gr
 });
 
 /******************************************* Library Routes **********************************/
-Route::namespace('Library')->prefix('library')->group(function (){
-    Route::get('/book/{book}', 'BooksController@show');
+Route::namespace('Library')->prefix('library')->name('library.')->group(function (){
+    Route::resource('book','BooksController');
+    Route::post('book/store','BooksController@store')->name('book.store');
+
+    Route::get('book/issue/{book}', 'LibraryController@issueBook')->name('book.issue');
+    Route::Post('book/', 'LibraryController@submitIssue')->name('book.issue.submit');
 });
 
 Route::namespace('Student')->prefix('student')->middleware(IsStudent::class)->group(function (){
@@ -89,6 +61,7 @@ Route::namespace('Student')->prefix('student')->middleware(IsStudent::class)->gr
      Route::get('/form/create', 'StudentsController@create_form');
      Route::get('/form/submit', 'StudentsController@form_submit');
      Route::get('/form/check', 'StudentsController@check');
+     Route::get('/library/books', 'StudentsController@books');
         
 
 });
@@ -97,13 +70,6 @@ Route::namespace('Student')->prefix('student')->middleware(IsStudent::class)->gr
 Route::get('test', function(){
     $attendance = Attendance::where();
     return view('test', compact('users'));
-});
-
-Route::get('halim', 'TestController@check');
-
-Route::namespace('Library')->prefix('library')->group(function (){
-    Route::get('/home', 'LibraryController@index');
-    Route::get('/book/show/{book}', 'LibraryController@show');
 });
 
 

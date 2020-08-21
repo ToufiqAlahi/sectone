@@ -17,4 +17,8 @@ class IssueBook extends Model
     public function book(){
         return $this->belongsTo(Book::class);
     }
+
+    public function getBookTitleAttribute(){
+        return $this->book->title;
+    }
 }
