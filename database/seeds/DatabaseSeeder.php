@@ -11,13 +11,20 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(CoursesTableSeeder::class);
-        // $this->call(SemestersTableSeeder::class);
-        // $this->call(HostelMemberTableSeeder::class);
-        // $this->call(CourseSemesterTableSeeder::class);
-        // $this->call(EventsTableSeeder::class);
-        $this->call(BooksTableSeeder::class);
-        // $this->call(TeacherTableSeeder::class);
-        // $this->call(StudentsTableSeeder::class);
+        $this->call([
+            DepartmentTableSeeder::class,
+            SemestersTableSeeder::class,
+            CoursesTableSeeder::class,
+            CourseSemesterTableSeeder::class,
+            HostelTableSeeder::class,
+            RolesTableSeeder::class,
+            HostelMemberTableSeeder::class,
+            UsersTableSeeder::class,
+            BooksTableSeeder::class,
+            SliderImageTableSeeder::class,
+            EventsTableSeeder::class,
+            TeacherTableSeeder::class,
+            StudentsTableSeeder::class,
+        ]);
     }
 }

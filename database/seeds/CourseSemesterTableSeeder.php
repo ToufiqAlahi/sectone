@@ -10,8 +10,8 @@ class CourseSemesterTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('course_semester')->truncate();
-        DB::table('course_semester')->create([
+        \DB::table('course_semester')->truncate();
+        \DB::table('course_semester')->insert([
             'course_id' => '1101',
             'semester_id'=> '6'
         ]);

@@ -34,7 +34,7 @@ class Student extends Model
     public function hostel_member(){
         return $this->hasOne(H_Member::class);
     }
-
+    
     public function library_member(){
         return $this->hasOne(L_Member::class);
     }

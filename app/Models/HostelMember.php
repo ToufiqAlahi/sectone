@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Student;
-use App\Models\Admin\Hostel;
+use App\Models\Hostel\Hostel;
 class HostelMember extends Model
 {
     protected $table = 'hostel_members';

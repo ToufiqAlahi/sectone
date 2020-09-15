@@ -4,7 +4,7 @@
     <div class="banner">
         @foreach ($images as $image)
                 <div id={{'10'.$image->id}} class="banner_inner_div hide">
-                    <img class="" src="{{asset('image/slider/'.$image->image.'.jpg')}}" alt="">
+                    <img class="" src="{{asset('image/slider/'.$image->img)}}" alt="">
                 </div>
         @endforeach 
     </div>  
@@ -12,7 +12,7 @@
     <div class="image-tiles">
         @foreach ($images as $image)
             <div class="tile">
-                <img id = {{$image->id}} onclick = "showBanner(this.id)" src="{{asset('image/slider/'.$image->image.'.jpg')}}" alt="">
+                <img id = {{$image->id}} onclick = "showBanner({{$image->img}})" src="{{asset('image/slider/'.$image->img)}}" alt="">
             </div>  
         @endforeach  
     </div>
@@ -21,7 +21,7 @@
 
     <article>
         <div class="chairman">
-            <img src="{{asset('image/Hijab/02.jpeg')}}" alt="">
+            <img src="{{asset('image/propic.jpg')}}" alt="">
         </div>
         <div class="article-desc">
             <h2>Sylhet University Of Engineering and Technology</h2>

@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\HostelMember;
+use App\Models\Hostel\Member;
 class HostelMemberTableSeeder extends Seeder
 {
     /**
@@ -11,7 +11,7 @@ class HostelMemberTableSeeder extends Seeder
      */
     public function run()
     {
-        HostelMember::truncate();
+        Member::truncate();
         $members = [
             ['student_id'=>'2016331509', 'hostel'=>'2', 'room_no'=>'207', 'sit_no'=>'122071', 'admission_date'=>'12/01/2017', 'payment_id'=>'111111'],
             ['student_id'=>'2016331510', 'hostel'=>'2', 'room_no'=>'207', 'sit_no'=>'122071', 'admission_date'=>'12/01/2017', 'payment_id'=>'111112'],
@@ -25,7 +25,7 @@ class HostelMemberTableSeeder extends Seeder
         ];
 
         foreach ($members as $member) {
-            HostelMember::create([
+            Member::create([
                 'student_id' => $member['student_id'],
                 'hostel' => $member['hostel'],
                 'room_no' => $member['room_no'],

@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Route;
+use App\Http\Middleware\MyMiddlewares\IsAdmin;
+
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -46,6 +48,8 @@ class RouteServiceProvider extends ServiceProvider
 
         $this->mapWebRoutes();
 
+        $this->mapAdminRoutes();
+
         //
     }
     /**
@@ -62,6 +66,12 @@ class RouteServiceProvider extends ServiceProvider
             ->group(base_path('routes/web.php'));
     }
 
+    protected function mapAdminRoutes()
+    {
+        Route::namespace($this->namespace)
+            // ->middleware(IsAdmin::class)
+            ->group(base_path('routes/admin.php'));
+    }
     /**
      * Define the "api" routes for the application.
      *

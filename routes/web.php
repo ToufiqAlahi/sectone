@@ -5,9 +5,8 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Middleware\MyMiddlewares\IsStudent;
 use App\Http\Middleware\MyMiddlewares\IsTeacher;
 use App\Http\Middleware\MyMiddlewares\IsAdmin;
-
-
 Auth::routes();
+
 Route::get('user', 'HomeController@user_info');
 
 /******************************************* Home Routes **********************************/
@@ -68,8 +67,7 @@ Route::namespace('Student')->prefix('student')->middleware(IsStudent::class)->gr
 
 
 Route::get('test', function(){
-    $attendance = Attendance::where();
-    return view('test', compact('users'));
+    return view('admin.student.show');
 });
 
 
