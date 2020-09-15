@@ -6,34 +6,53 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link href="{{asset('css/admin/font-awesome/css/font-awesome.css')}}" rel="stylesheet" />
-    <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet" />
-    <link rel="stylesheet" href="{{asset('css/admin/layout.css')}}">
-    <link rel="stylesheet" href="{{asset('css/admin/admin_members.css')}}">
-    <link rel="stylesheet" href="{{asset('css/admin/members.css')}}">
-    <link rel="stylesheet" href="{{asset('css/admin/admin_notices.css')}}">
-    <link rel="stylesheet" href="{{asset('css/admin/admin_responsive.css')}}">
+    <link href="{{asset('css/admin/font-awesome/css/font-awesome.css')}}" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="{{asset('materialize/css/materialize.css')}}"  media="screen,projection"/>
+
     <title>Admin Panel</title>
 
    </head>
 <body>
     <header>
-        <div class="logo">
-            <h1>SUET</h1>
-        </div>
-        <div class="header_menu">
-            <li onclick="goto('home')" >Home</li>
-            <li onclick="goto('admin/dashboard')" >Dashboard</li>
-            <li onclick="goto('dashboard')" >Home</li>
-            <li onclick="goto('dashboard')" >Dashboard</li>
-            <div class="add_new" onclick="logout('admin_logout_form')">Logout</div>
-            <form id="admin_logout_form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                @csrf
-            </form>
-        </div>
+        <nav class="blue darken-2">
+            <div class="nav-wrapper">
+                <a href="#!" class="brand-logo">Logo</a>
+                <ul class="right hide-on-med-and-down">
+                    <li>
+                        <a href="{{url('home')}}">
+                            <i class="material-icons">home</i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{url('admin/dashboard')}}">
+                            <i class="material-icons">dashboard</i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{url('admin/dashboard')}}">
+                            <i class="material-icons">email</i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{url('admin/dashboard')}}">
+                            <i class="material-icons">notifications</i>
+                        </a>
+                    </li>
+                    <li>
+
+                    </li>
+                    <li class="" onclick="logout('admin_logout_form')">Logout</li>
+                    <form id="admin_logout_form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+                </ul>
+            </div>
+        </nav>
     </header>
-    <aside>                 
+    {{-- <aside>                 
         <nav class="side-nav">
                 <ul class="nav" id="side-menu">
                     <li>
@@ -124,16 +143,17 @@
             </div>
 
         </div>
-    </div>
+    </div> --}}
 
     <script>
         function logout() {
             document.getElementById('logout-form').submit();
         }
     </script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{{asset('materialize/js/JQuery.js')}}"></script>
+    <script type="text/javascript" src="{{asset('materialize/js/materialize.js')}}"></script>
+    <script type="text/javascript" src="{{asset('materialize/js/loader.js')}}"></script>
+    {{-- <script src="{{asset('js/main.js')}}"></script>   --}}
     <script src="{{asset('js/admin/main.js')}}"></script>
 
 </body>
