@@ -10,7 +10,7 @@
 ## About SUET
 
 SUET is a University management web aplication. It has the following features:
-    -Online student management system.
+    - [Online student management system.]
     -Online library management system.
     -Online Hostel management system.
 
