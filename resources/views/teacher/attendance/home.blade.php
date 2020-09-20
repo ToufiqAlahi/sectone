@@ -13,15 +13,13 @@
 
     .courses_list .course{
         height: 100px;
-        width: 200px;
-        margin: 5px;
+        /* width: 200px; */
+        margin: 5 5 10 5;
+        padding: 10px;
         border: none;
-        box-shadow: 2px 2px 5px grey;
+        /* box-shadow: 2px 2px 5px grey; */
         border-radius: 5px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+
         background: green;
         color: #f5f9f9ad;
         cursor: pointer;
@@ -29,14 +27,25 @@
     }
 </style>
     <div class="courses_list">
-        @foreach (Auth::user()->teacher->courses as $course)
-            <a href="{{url('teacher/attendance/all', $course)}}">
-                <div class="course">
-                    <h4>{{$course->code}}</h4>
-                    <p>{{$course->title}}</p>
-                </div>
-            </a>
-        @endforeach
+        <div class="row  teal lighten-4">
+            <div class="row center-align">
+                <h5>Your Courses</h5>
+            </div>
+            <div>
+                @foreach (Auth::user()->teacher->courses as $course)
+                <a href="{{url('teacher/attendance/all', $course)}}">
+                    <div class="col s6 m4 l2">
+                        <div class="course card teal center-align">
+                            <div class="">
+                                <p class="yellow-text">{{$course->code}}</p>
+                                <p>{{$course->title}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                @endforeach
+            </div>
+        </div>
             <style>
                 .attendanceTableWrapper{
                     margin: 35px;

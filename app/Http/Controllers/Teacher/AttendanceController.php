@@ -13,8 +13,6 @@ class AttendanceController extends Controller
     public function home(){
         return view('teacher.attendance.home');
     }
-
-
     public function sheet(Request $data){
         $department_id = $data->department_id;
         $courses = $this->get_courses($data);
@@ -80,15 +78,18 @@ class AttendanceController extends Controller
             return $item->date;
         });
 
-        if (count($attendance)<1) {
-            return 'No Attendance Found';
+        $data = $this->students($course);
+        $rules = [];
+        foreach ($data as $student) {
+            $rules[] = $student->id;
         }
-        return view('teacher.attendance.all', compact('attendance'));
+
+        return view('teacher.attendance.empty', compact(['attendance', 'rules', 'course']));
 
     }
 
-    public function students(Request $data){
-        $students = Course::find($data->id)->students;
+    public function students(Course $course){
+        $students = Course::find($course->id)->students;
         return $students;
     }
 

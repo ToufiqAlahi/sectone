@@ -1,111 +1,86 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="banner">
-        @foreach ($images as $image)
-                <div id={{'10'.$image->id}} class="banner_inner_div hide">
-                    <img class="" src="{{asset('image/slider/'.$image->img)}}" alt="">
-                </div>
-        @endforeach 
-    </div>  
+    
+    <div class="container">
+        <div class="carousel carousel-slider center">
+            <div class="carousel-fixed-item center">
+                {{-- <a class="btn waves-effect white grey-text darken-text-2">button</a> --}}
+            </div>
 
-    <div class="image-tiles">
-        @foreach ($images as $image)
-            <div class="tile">
-                <img id = {{$image->id}} onclick = "showBanner({{$image->img}})" src="{{asset('image/slider/'.$image->img)}}" alt="">
-            </div>  
-        @endforeach  
+            @foreach ($images as $image)
+                <div class="carousel-item" href="{{$image->id}}" style="background-image: url({{asset('image/slider/'.$image->img)}})">
+                    <div class="carousel-content">
+                    </div>
+                </div>
+            @endforeach
+        </div>
     </div>
 
+    <div class="container">
+        
+        <div class="row card-panel">
+            
+            <div class="col s12 m4">
+              <div class="card principal center-align z-depth-0">
+                <img src="{{asset('image/propic.jpg')}}" alt="" class="responsive-img circle">
+                <h5>Abdul Halim</h5>
+                <p>Vice Chancelor</p>
+              </div>
+            </div>
+            <div class="col s12 m8">
+                <div class="row center-align">
+                    <h5>About This University</h5>
+                </div>
+                <p class="black-text">I am a very simple card. I am good at containing small bits of information.
+                    I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
+                </p>
+                <p class="black-text">I am a very simple card. I am good at containing small bits of information.
+                    I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
+                </p>
+            </div>
+          </div>
+    </div>
 
-
-    <article>
-        <div class="chairman">
-            <img src="{{asset('image/propic.jpg')}}" alt="">
-        </div>
-        <div class="article-desc">
-            <h2>Sylhet University Of Engineering and Technology</h2>
-            <p>
-                Lorem ipsum dolor Lorem ipsum dolor fdg  sit amet,  consectetur adipisicing elit. Quas debitis cumque libero voluptatibus vel, voluptas amet harum cum minus sit architecto eos qui modi, perspiciatis tempore unde. Voluptatibus porro similique vel placeat fuga debitis minus nulla soluta ipsum, illo repudiandae. Odit voluptatibus et dignissimos eum non facere aliquam tempore repellat eligendi quas sint quisquam praesentium ipsa doloremque accusamus laboriosam, consequatur fugiat. Recusandae, quidem fugit dicta debitis reiciendis dolore culpa nam deleniti nihil dolor facilis inventore labore mollitia voluptatibus, rem illum velit cumque excepturi minima alias numquam quibusdam ea? Laboriosam tenetur adipisci quos eligendi error voluptatem quae eum, incidunt, ipsum repellendus iure laborum. Fugit consectetur a explicabo deserunt ad ut reiciendis, ducimus dolor deleniti aperiam ipsam. Delectus iste ipsa id debitis. sit amet consectetur adipisicing elit. Maiores excepturi amet soluta placeat. Modi maxime tempore laborum nesciunt ut nobis reiciendis vel odit, eum recusandae obcaecati rem ratione sit ea corporis fugiat enim deserunt beatae ex exercitationem impedit! Voluptatibus iure esse amet laborum magni porro aliquid voluptas exercitationem! Ut, eius.
-            </p>
-        </div>
-        <div class="notice">
-            <h4>Notices</h4>
-            <ul>
-                <li>16 December, Independance Day</li>
-                <li>16 December, Independance Day</li>
-                <li>16 December, Independance Day</li>
-                <li>16 December, Independance Day</li>
-                <li>16 December, Independance Day</li>
-            </ul>
-        </div>
-    </article>
-
-    <div class="EventContainer">
-        <h1>Recent Events</h1>
-        <div class="EventCards">
+    <div class="container">
+        <div class="row card">
+            <h3 class="center card-title" style="padding-top: 40px;  !important">Recent events</h3>
             @foreach ($events as $event)
-            <div class="EventCard">
-                <div class="cardImage">
-                    <img src="{{asset('image/event/'. $event->image)}}" alt="">
-                </div>
-                <div class="CardHeader">
-                    <h3>{{$event->title}}</h3>
-                </div>
-                <div class="CardDescription">
-                    <p>
-                        {{$event->description}}
-                    </p>
-                </div>
-                <div class="cardbtn">
-                    <button>Read more</button>
-                </div>
+                <div class="col s12 m3">
+                    <div class="card">
+                        <div class="card-image waves-effect waves-block waves-light">
+                            <img src="{{asset('image/event/'. $event->image)}}" alt="">
+                        </div>
+                        <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+                        <p><a href="#" class="btn btn-small">Read more</a></p>
+                        </div>
+                        <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+                        <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                        </div>
+                    </div>
             </div>
             @endforeach
         </div>
     </div>
 
-
-    <footer>
-        <div class="copyRight">
-            <h3>Design & Developed</h3>
-        </div>
-    </footer>
-
-    {{-- **************************************/Starts JavaScript Code/************************************** --}}
-    <script>
-    let banner_id = 101;
-    function showBanner(id){
-        let b_id = (100+parseInt(id)).toString();
-        hideAll();
-        const div = document.getElementById(b_id);
-        div.classList.remove('hide'); 
-        banner_id = parseInt(b_id);
-        clearInterval(showBannerAuto);     
-    }
-
-    function hideAll(){
-        let div = document.querySelector('.banner');
-        for(let i =0; i<div.children.length; i++){
-            div.children[i].classList.add('hide');
-        }
-    }
-
-    function showBannerAuto(){
-        hideAll();
-        const div = document.getElementById(banner_id.toString());
-        div.classList.remove('hide');
-        if (banner_id==107) {
-            banner_id = 101;
-        }
-        else banner_id++;        
-    }
-    setInterval(showBannerAuto, 3000);
-
-    window.onload = function(){
-        showBanner('01');
-    }
-    </script>
-{{-- **************************************/Ends JavaScript Code/************************************** --}}
-
 @endsection
+
+
+    <style>
+        .principal{
+            overflow: hidden;
+        }
+        .principal img{
+            height: 150px;
+            width: 150px;
+            border: 5px solid yellowgreen;
+            border-radius: 50%;
+        }
+        .carousel-item{
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+    </style>
