@@ -52,8 +52,10 @@
                             <img src="{{asset('image/event/'. $event->image)}}" alt="">
                         </div>
                         <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
-                        <p><a href="#" class="btn btn-small">Read more</a></p>
+                            <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+                        </div>
+                        <div class="card-action center-align">
+                            <a href="">Read more</a>
                         </div>
                         <div class="card-reveal">
                         <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>

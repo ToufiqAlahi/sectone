@@ -1,4 +1,63 @@
 
+<!DOCTYPE html>
+<html>
+    <head>
+        @include('layouts.includes.head')
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        @include('layouts.student.header')
+        <div class="row">
+            
+            <div class="aside col hide-on-med-and-down l2">
+                @include('layouts.student.sidebar')
+            </div>
+
+            <div class="col l10">
+                <div class="">
+                    @yield('content')
+                </div>
+            </div>
+
+        </div>
+
+        @include('layouts.includes.bottom')
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{-- 
 
 <!DOCTYPE html>
 <html lang="en">
@@ -95,4 +154,4 @@
 
     <script src="{{asset('js/main.js')}}"></script>
 </body>
-</html>
+</html> --}}
