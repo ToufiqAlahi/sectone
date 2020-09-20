@@ -18,7 +18,7 @@ class DashboardController extends Controller
     }
     public function library(){
         $books = Book::all();
-        return view('admin.library.books', compact('books'));
+        return view('admin.library.book.books', compact('books'));
     }
 
     public function member_show(HostelMember $member){

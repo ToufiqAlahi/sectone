@@ -7,4 +7,7 @@
         indicators: true
       });
     $('.modal').modal();
+    $('.datepicker').datepicker();
+    $('select').formSelect();
+    $('.tabs').tabs();
   });

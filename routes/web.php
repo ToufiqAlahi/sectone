@@ -61,8 +61,6 @@ Route::namespace('Student')->prefix('student')->middleware(IsStudent::class)->gr
      Route::get('/form/submit', 'StudentsController@form_submit');
      Route::get('/form/check', 'StudentsController@check');
      Route::get('/library/books', 'StudentsController@books');
-        
-
 });
 
 

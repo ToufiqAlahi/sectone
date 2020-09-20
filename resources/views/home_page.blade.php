@@ -1,31 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
-    <style>
-        .principal{
-            height: 200px;
-            width: 200px;
-            border: 5px solid yellowgreen;
-            border-radius: 50%;
-            overflow: hidden;
-        }
-        .carousel-item{
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
-        }
-    </style>
+    
     <div class="container">
         <div class="carousel carousel-slider center">
             <div class="carousel-fixed-item center">
-                <a class="btn waves-effect white grey-text darken-text-2">button</a>
+                {{-- <a class="btn waves-effect white grey-text darken-text-2">button</a> --}}
             </div>
 
             @foreach ($images as $image)
                 <div class="carousel-item" href="{{$image->id}}" style="background-image: url({{asset('image/slider/'.$image->img)}})">
                     <div class="carousel-content">
-                        <h2>First Panel</h2>
-                        <p class="white-text">This is your first panel</p>
                     </div>
                 </div>
             @endforeach
@@ -33,13 +18,20 @@
     </div>
 
     <div class="container">
+        
         <div class="row card-panel">
+            
             <div class="col s12 m4">
-              <div class="card principal">
-                <img src="{{asset('image/propic.jpg')}}" alt="" class="responsive-img">
+              <div class="card principal center-align z-depth-0">
+                <img src="{{asset('image/propic.jpg')}}" alt="" class="responsive-img circle">
+                <h5>Abdul Halim</h5>
+                <p>Vice Chancelor</p>
               </div>
             </div>
             <div class="col s12 m8">
+                <div class="row center-align">
+                    <h5>About This University</h5>
+                </div>
                 <p class="black-text">I am a very simple card. I am good at containing small bits of information.
                     I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
                 </p>
@@ -76,48 +68,19 @@
 @endsection
 
 
-
-
-
-
-{{--
-    **************************************/Starts JavaScript Code/**************************************
-    <script>
-        let banner_id = 101;
-        function showBanner(id){
-            let b_id = (100+parseInt(id)).toString();
-            hideAll();
-            const div = document.getElementById(b_id);
-            div.classList.remove('hide'); 
-            banner_id = parseInt(b_id);
-            clearInterval(showBannerAuto);     
+    <style>
+        .principal{
+            overflow: hidden;
         }
-    
-        function hideAll(){
-            let div = document.querySelector('.banner');
-            for(let i =0; i<div.children.length; i++){
-                div.children[i].classList.add('hide');
-            }
+        .principal img{
+            height: 150px;
+            width: 150px;
+            border: 5px solid yellowgreen;
+            border-radius: 50%;
         }
-    
-        function showBannerAuto(){
-            hideAll();
-            const div = document.getElementById(banner_id.toString());
-            div.classList.remove('hide');
-            if (banner_id==107) {
-                banner_id = 101;
-            }
-            else banner_id++;        
+        .carousel-item{
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
         }
-        setInterval(showBannerAuto, 3000);
-    
-        window.onload = function(){
-            showBanner('01');
-        }
-        </script>
-    **************************************/Ends JavaScript Code/**************************************
-    
-    
-    
-    
-    --}}
+    </style>

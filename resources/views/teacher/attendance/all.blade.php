@@ -1,135 +1,37 @@
+
+
+
+
+{{-- 
+@if (count($attendance)<1)
+    {{$rules[1]}}
+@else
+    No problem
+@endif
+ --}}
+
+
+
+
+
+
+
 @extends('layouts.teacher')
 
 @section('content')
-        <style>
 
-            .date_div{
-                height: auto;
-                display: flex;
-                flex-wrap: wrap;
-                cursor: pointer;
-            }
-            .date_div .take_new,
-            .date_div .date{
-                height: 50px;
-                margin: 5px;
-                width: 100px;
-                display: flex;
-                background: brown;
-                align-items: center;
-                justify-content: center;
-                color: white;
-                border-radius: 5px;
-            }
-            .date_div .take_new{
-                background: #21635d;
-            }
-
-            .date_div .date.active{
-                background: #0c7f80;
-            }
-            .attendanceTableWrapper{
-                margin: 35px;
-                border-radius: 5px;
-                overflow: hidden;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                width: 300px;
-            }
-            .attendanceTableWrapper.hide{
-                display: none;
-            }
-            .attendanceTableWrapper .title{
-                padding: 20px;
-                width: 300px;
-                text-align: center;
-                height: 100px;
-                display: flex;
-                align-items: center;
-                background: #7b0000c9;
-                color: white;
-                border-bottom: 1px solid rgb(9, 214, 170);
-            }
-            .attendanceTableWrapper .title h3{
-                text-align: center;
-                font-weight: 500;
-                letter-spacing: 1px;
-                text-transform: capitalize;
-            }
-
-            .attendanceTableWrapper button{
-                margin: auto;
-                padding: 10px;
-                width: 300px;
-                color: white;
-                border: none;
-                border-radius: 0%;
-                background: rgb(51, 6, 6);
-                color: rgb(6, 198, 218);
-            }
-
-
-            .attendanceTableBody{
-
-                height: 387;
-                width: 100%;
-                display: grid;
-                grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-                grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-                align-items: center;
-                justify-items: center;
-                background: #a90404;
-            }
-
-
-            .attendanceTableBody button{
-                width: 45px;
-                height: 45px;
-                border-radius: 50%;
-                border: none;
-                outline: none;
-                padding: 10px;
-                margin: 5px;
-                cursor: pointer;
-                background: rgb(9, 214, 170);
-                color: rgb(0, 0, 0);
-                border: 1px solid yellow;
-                font-size: 20px;
-            }
-
-
-
-            /* button will be red when button pressed as absent */
-            .attendanceTableBody button.absent{
-                background: rgb(224, 47, 47);
-                color: white;
-            }
-            .review{
-                padding-top: 10px;
-                width: 300px;
-                text-align: center;
-                height: 100px;
-                align-items: center;
-                justify-content: center;
-                background: #7b0000c9;
-                color: white;
-                border-bottom: 1px solid rgb(9, 214, 170);
-            }
-            .review>div{
-                height: 35px;
-            }
-        </style>
-
-        <div class="date_div">
-            @foreach ($attendance as $date => $data)
-                <div class="date" onclick="show_attendance(this, {{$data}})">
-                    <h3> {{$date}}</h3>
-                </div>
-            @endforeach
-            <div class="take_new" onclick="take_attendance({{$data}})">
-                <h3>Take New</h3>
+        @if (count($attendance)>0)
+            <div class="date_div">
+                @foreach ($attendance as $date => $data)
+                    <div class="date" onclick="show_attendance(this, {{$data}})">
+                        <h3> {{$date}}</h3>
+                    </div>
+                @endforeach
             </div>
+        @endif
+
+        <div class="take_new" onclick="take_attendance({{$data}})">
+            <h3>Take New</h3>
         </div>
         
         <style>
@@ -268,3 +170,122 @@
         }
         </script>
 @endsection
+
+<style>
+    .date_div{
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        cursor: pointer;
+    }
+    .date_div .take_new,
+    .date_div .date{
+        height: 50px;
+        margin: 5px;
+        width: 100px;
+        display: flex;
+        background: brown;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        border-radius: 5px;
+    }
+    .date_div .take_new{
+        background: #21635d;
+    }
+
+    .date_div .date.active{
+        background: #0c7f80;
+    }
+    .attendanceTableWrapper{
+        margin: 35px;
+        border-radius: 5px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 300px;
+    }
+    .attendanceTableWrapper.hide{
+        display: none;
+    }
+    .attendanceTableWrapper .title{
+        padding: 20px;
+        width: 300px;
+        text-align: center;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        background: #7b0000c9;
+        color: white;
+        border-bottom: 1px solid rgb(9, 214, 170);
+    }
+    .attendanceTableWrapper .title h3{
+        text-align: center;
+        font-weight: 500;
+        letter-spacing: 1px;
+        text-transform: capitalize;
+    }
+
+    .attendanceTableWrapper button{
+        margin: auto;
+        padding: 10px;
+        width: 300px;
+        color: white;
+        border: none;
+        border-radius: 0%;
+        background: rgb(51, 6, 6);
+        color: rgb(6, 198, 218);
+    }
+
+
+    .attendanceTableBody{
+
+        height: 387;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        align-items: center;
+        justify-items: center;
+        background: #a90404;
+    }
+
+
+    .attendanceTableBody button{
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        border: none;
+        outline: none;
+        padding: 10px;
+        margin: 5px;
+        cursor: pointer;
+        background: rgb(9, 214, 170);
+        color: rgb(0, 0, 0);
+        border: 1px solid yellow;
+        font-size: 20px;
+    }
+
+
+
+    /* button will be red when button pressed as absent */
+    .attendanceTableBody button.absent{
+        background: rgb(224, 47, 47);
+        color: white;
+    }
+    .review{
+        padding-top: 10px;
+        width: 300px;
+        text-align: center;
+        height: 100px;
+        align-items: center;
+        justify-content: center;
+        background: #7b0000c9;
+        color: white;
+        border-bottom: 1px solid rgb(9, 214, 170);
+    }
+    .review>div{
+        height: 35px;
+    }
+</style>
