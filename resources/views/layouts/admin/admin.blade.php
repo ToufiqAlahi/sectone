@@ -1,4 +1,36 @@
 
+<!DOCTYPE html>
+<html>
+    <head>
+        @include('layouts.includes.head')
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        @include('layouts.admin.header')
+        <div class="row">
+            
+            <div class="aside col hide-on-med-and-down l2">
+                @include('layouts.admin.sidebar')
+            </div>
+
+            <div class="col l10">
+                <div class="">
+                    @yield('content')
+                </div>
+            </div>
+
+        </div>
+
+        @include('layouts.includes.bottom')
+    </body>
+</html>
+
+
+
+
+{{-- 
 
     @include('layouts.head')
 
@@ -57,4 +89,4 @@
             border: 1px solid teal;
             box-shadow: 1px 1px 3px lightgrey;
         }
-</style>
+</style> --}}
